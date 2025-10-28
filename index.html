@@ -11,34 +11,43 @@
   </style>
 
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    /* === Grundinställningar === */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: 'Fira Code', monospace;
-      color: #e6f0ff;
-      background-color: #10182b;
+      color: #eaf3ff;
+      background-color: #0d1424;
       overflow-x: hidden;
       position: relative;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      letter-spacing: 0.1px;
     }
 
-    /* === Kodbakgrund (större & centrerad) === */
+    /* === Kodbakgrund === */
     .code-bg {
       position: fixed;
       inset: 0;
-      background: linear-gradient(180deg, #10182b 0%, #0c1224 100%);
+      background: linear-gradient(180deg, #0e162b 0%, #0b1120 100%);
       z-index: 0;
       overflow: hidden;
-      color: rgba(0, 255, 200, 0.06);
-      font-size: 16px;
-      line-height: 1.7;
+      color: rgba(0, 255, 200, 0.05);
+      font-size: 17px;
+      line-height: 1.8;
       text-align: center;
       user-select: none;
       pointer-events: none;
-      animation: scrollCode 90s linear infinite;
+      animation: scrollCode 100s linear infinite;
       white-space: pre-wrap;
+      padding: 6vh 8vw;
     }
 
     @keyframes scrollCode {
@@ -49,7 +58,7 @@
     /* === Blinkande markör === */
     .cursor {
       display: inline-block;
-      background-color: #00ffff;
+      background-color: #7dfcff;
       width: 10px;
       height: 1.4rem;
       margin-left: 5px;
@@ -62,12 +71,13 @@
       50.1%, 100% { opacity: 0; }
     }
 
-    /* === Layout och innehåll === */
+    /* === Huvudinnehåll === */
     .content-wrapper {
       flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      padding-bottom: 100px;
     }
 
     .container {
@@ -79,62 +89,67 @@
       flex-wrap: wrap;
       width: 90%;
       max-width: 1100px;
-      margin: 80px auto;
-      padding: 40px;
+      margin: 90px auto;
+      padding: 50px;
       border-radius: 20px;
-      background-color: rgba(18, 25, 44, 0.85);
+      background-color: rgba(15, 22, 38, 0.85);
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
       backdrop-filter: blur(8px);
     }
 
+    /* === Textavsnitt === */
     .text {
       flex: 1;
       min-width: 280px;
-      padding-right: 50px;
+      padding-right: 40px;
     }
 
     .text h1 {
-      font-size: 2.4rem;
-      color: #80e4ff;
-      margin-bottom: 15px;
+      font-size: 2.5rem;
+      color: #9ee3ff;
+      margin-bottom: 20px;
+      font-weight: 500;
     }
 
     .text p {
-      color: #bedbff;
-      line-height: 1.6;
+      color: #cde3ff;
+      line-height: 1.75;
       font-size: 1.05rem;
       margin-bottom: 20px;
     }
 
     .lia-text {
-      color: #9fd6ff;
+      color: #b4deff;
       font-size: 1rem;
-      line-height: 1.6;
+      line-height: 1.7;
       margin-bottom: 25px;
       font-style: italic;
     }
 
+    /* === Knappar === */
     .buttons {
       display: flex;
       align-items: center;
       gap: 15px;
       flex-wrap: wrap;
+      margin-top: 10px;
     }
 
     .btn {
       background: linear-gradient(90deg, #00bfff, #0077ff);
-      color: #fff;
+      color: #0c1528;
       padding: 12px 20px;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0, 119, 255, 0.4);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: 0 3px 10px rgba(0, 119, 255, 0.35);
     }
 
     .btn:hover {
       background: linear-gradient(90deg, #00ffff, #00bfff);
-      box-shadow: 0 6px 15px rgba(0, 255, 255, 0.5);
+      box-shadow: 0 6px 15px rgba(0, 255, 255, 0.45);
+      transform: translateY(-2px);
     }
 
     /* === Sociala ikoner === */
@@ -146,21 +161,22 @@
     }
 
     .socials img {
-      width: 38px;
-      height: 38px;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
-      background-color: rgba(0, 119, 255, 0.15);
+      background-color: rgba(0, 119, 255, 0.12);
       padding: 8px;
       transition: all 0.3s ease;
-      box-shadow: 0 0 10px rgba(0, 255, 255, 0.15);
+      box-shadow: 0 0 8px rgba(0, 255, 255, 0.15);
     }
 
     .socials img:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+      transform: scale(1.08);
+      box-shadow: 0 0 12px rgba(0, 255, 255, 0.25);
       background-color: rgba(0, 191, 255, 0.25);
     }
 
+    /* === Bildsektion === */
     .image {
       flex: 1;
       display: flex;
@@ -183,7 +199,7 @@
 
     @keyframes glow {
       from { transform: scale(1); opacity: 0.8; }
-      to { transform: scale(1.1); opacity: 1; }
+      to { transform: scale(1.08); opacity: 1; }
     }
 
     .image img {
@@ -201,32 +217,33 @@
 
     @keyframes fadeIn { to { opacity: 1; } }
 
+    /* === Footer === */
     footer {
       position: fixed;
       bottom: 0;
       left: 0;
       width: 100%;
-      background: rgba(18, 25, 44, 0.9);
+      background: rgba(15, 22, 38, 0.9);
       text-align: center;
-      color: #7ddfff;
-      padding: 15px 10px;
+      color: #9edbff;
+      padding: 14px 10px;
       font-size: 0.95rem;
       z-index: 5;
       box-shadow: 0 -3px 10px rgba(0,0,0,0.3);
     }
 
-    /* === Mobiloptimering === */
+    /* === Mobilvy === */
     @media (max-width: 900px) {
       .container {
         flex-direction: column-reverse;
         text-align: center;
-        padding: 25px;
-        margin: 60px auto;
+        padding: 30px;
+        margin: 70px auto;
       }
 
       .text { padding: 0; }
-      .text h1 { font-size: 2rem; }
-      .text p { font-size: 0.95rem; }
+      .text h1 { font-size: 2rem; margin-bottom: 15px; }
+      .text p, .lia-text { font-size: 0.95rem; margin-bottom: 20px; }
 
       .image img {
         width: 220px;
@@ -238,8 +255,9 @@
     }
   </style>
 </head>
+
 <body>
-  <!-- Kodbakgrund -->
+  <!-- Bakgrundskod -->
   <div class="code-bg">
 &lt;html&gt;
   &lt;head&gt;
@@ -260,28 +278,29 @@
 &lt;/html&gt;
   </div>
 
+  <!-- Innehåll -->
   <div class="content-wrapper">
     <div class="container">
       <div class="text">
         <h1>Hej,<br>Jag heter Gurdip Bola<span class="cursor"></span></h1>
         <p>
           Jag är en blivande systemutvecklare med inriktning på Microsoft Azure och C#.<br />
-          Jag gillar att skapa smarta och säkra lösningar i molnet.
+          Jag gillr att skapa smarta och säkra lösningar i molnet.
         </p>
         <p class="lia-text">
           Jag söker en LIA-plats inom systemutveckling med fokus på .NET och Azure, där jag kan utvecklas praktiskt och bidra med min kunskap och mitt driv.
         </p>
+
         <div class="buttons">
           <a href="GurdipBolaCV1.docx" class="btn" download>📄 Ladda ner CV</a>
         </div>
 
-        <!-- Sociala ikoner -->
         <div class="socials">
-          <a href="https://github.com/gurdip6" target="_blank">
-            <img src="github.png" alt="GitHub">
+          <a href="https://github.com/gurdip6" target="_blank" rel="noopener">
+            <img src="github.png" alt="GitHub" />
           </a>
-          <a href="https://www.linkedin.com/in/gurdip-bola-b82136217/" target="_blank">
-            <img src="linkedin.webp" alt="LinkedIn">
+          <a href="https://www.linkedin.com/in/gurdip-bola-b82136217/" target="_blank" rel="noopener">
+            <img src="linkedin.webp" alt="LinkedIn" />
           </a>
         </div>
       </div>
