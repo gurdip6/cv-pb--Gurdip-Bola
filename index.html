@@ -3,38 +3,100 @@
 <head>
   <meta charset="UTF-8">
   <title>Gurdip Bola – CV & Personligt Brev</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 40px auto;
-      max-width: 700px;
-      line-height: 1.6;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f5f7fb;
+      margin: 0;
+      padding: 0;
       color: #333;
     }
-    h1, h2 { color: #004aad; }
-    a { color: #007bff; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .card {
-      border: 1px solid #ddd;
-      border-radius: 10px;
+
+    header {
+      background-color: #004aad;
+      color: white;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.4em;
+    }
+
+    header p {
+      margin: 10px 0 0;
+      font-size: 1.1em;
+    }
+
+    main {
+      max-width: 700px;
+      margin: 40px auto;
       padding: 20px;
-      margin-top: 20px;
-      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #004aad;
+      margin-top: 0;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #004aad;
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      margin: 10px 5px 0 0;
+      border-radius: 8px;
+      transition: background-color 0.2s ease;
+    }
+
+    .btn:hover {
+      background-color: #0066ff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #666;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+      main {
+        margin: 20px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Gurdip Bola</h1>
-  <p>Systemutvecklare under utbildning med fokus på Microsoft Azure och C#.</p>
+  <header>
+    <h1>Gurdip Bola</h1>
+    <p>Systemutvecklare under utbildning – Microsoft Azure & C#</p>
+    <p>📍 Stockholm | ✉️ <a href="mailto:gurdip6@live.se" style="color:white;">gurdip6@live.se</a> | 📞 076-201 36 16</p>
+  </header>
 
-  <div class="card">
-    <h2>📄 Mitt CV</h2>
-    <a href="GurdipBolaCV1.docx" download>Ladda ner CV</a>
-  </div>
+  <main>
+    <h2>Om mig</h2>
+    <p>Jag är en blivande systemutvecklare med fokus på molnbaserad utveckling och Azure. 
+    Jag har erfarenhet av C#, SQL/NoSQL, JavaScript och React, och trivs bäst när jag får kombinera 
+    teknik med problemlösning och lagarbete.</p>
 
-  <div class="card">
-    <h2>💌 Personligt Brev</h2>
-    <p><a href="Personligt%20Brev-Gurdip1.docx" download>Ladda ner Personligt Brev</a></p>
-  </div>
+    <h2>Dokument</h2>
+    <p>Ladda ner mina dokument här:</p>
+    <a class="btn" href="GurdipBolaCV1.docx" download>📄 Ladda ner CV</a>
+    <a class="btn" href="Personligt%20Brev-Gurdip1.docx" download>💌 Ladda ner Personligt Brev</a>
+  </main>
+
+  <footer>
+    <p>© 2025 Gurdip Bola</p>
+  </footer>
 </body>
 </html>
