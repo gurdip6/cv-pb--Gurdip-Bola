@@ -4,11 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gurdip Bola – Portfolio</title>
+
+  <!-- Importera Fira Code -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap');
+  </style>
+
   <style>
     * {box-sizing: border-box; margin:0; padding:0;}
 
     body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Fira Code', monospace;
       color: #333;
       background: #fff;
       overflow-x: hidden;
@@ -143,6 +149,12 @@
       border: 6px solid #ffffff;
       position: relative;
       z-index: 1;
+      opacity: 0;
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to {opacity: 1;}
     }
 
     /* --- PROJECT SECTION --- */
@@ -246,27 +258,7 @@
     </div>
   </div>
 
-  <!-- PROJECTS -->
-  <section class="projects">
-    <h2>Projekt</h2>
-    <div class="project-grid">
-      <a href="https://github.com/gurdip6" target="_blank" class="card">
-        <h3>Azure API Deployment</h3>
-        <p>Ett projekt där jag byggde och publicerade en säker .NET-API i Azure med CI/CD-pipeline och åtkomstkontroll.</p>
-      </a>
-
-      <a href="https://github.com/gurdip6" target="_blank" class="card">
-        <h3>Webbapp med React & Node</h3>
-        <p>En modern webbapplikation som hanterar användardata och API-kommunikation med React och Express.</p>
-      </a>
-
-      <a href="https://github.com/gurdip6" target="_blank" class="card">
-        <h3>Molnlagring & SQL</h3>
-        <p>Projekt med Azure Storage och SQL-databas, optimerat för säker dataåtkomst och hög tillgänglighet.</p>
-      </a>
-    </div>
-  </section>
-
+  
   <footer>© 2025 Gurdip Bola | Byggd med passion och kod 💻</footer>
 </body>
 </html>
