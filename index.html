@@ -24,7 +24,7 @@
 
     header {
       text-align: center;
-      padding: 80px 20px 60px;
+      padding: 80px 20px 40px;
     }
 
     header h1 {
@@ -38,6 +38,25 @@
       color: #9cc9ff;
       margin: 10px 0;
       font-size: 1.1em;
+    }
+
+    /* Social Links */
+    .social-links {
+      margin-top: 25px;
+    }
+
+    .social-links a {
+      display: inline-block;
+      margin: 0 10px;
+      font-size: 1.6em;
+      color: #00bfff;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: #33ccff;
+      text-shadow: 0 0 15px #00bfff;
+      transform: translateY(-2px);
     }
 
     /* === MAIN SECTION === */
@@ -102,12 +121,22 @@
       .card { padding: 20px; }
     }
   </style>
+  <!-- Social Icons -->
+  <script src="https://kit.fontawesome.com/6b2a4f7bfa.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
     <h1>Gurdip Bola</h1>
     <p>Systemutvecklare – Microsoft Azure & C#</p>
-    <p>📍 Stockholm | ✉️ <a href="mailto:gurdip6@live.se" style="color:#00bfff;">gurdip6@live.se</a> | 📞 076-201 36 16</p>
+    
+    <div class="social-links">
+      <a href="https://github.com/gurdip6" target="_blank" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/gurdip-bola-b82136217/" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
   </header>
 
   <main>
@@ -141,7 +170,7 @@
   </main>
 
   <footer>
-    <p>© 2025 Gurdip Bola | Skapad med ❤️ och kod</p>
+    <p>© 2025 Gurdip Bola | Byggd med passion och kod 💻</p>
   </footer>
 </body>
 </html>
