@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Gurdip Bola – Portfolio</title>
   <style>
-    /* === GLOBAL STYLING === */
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -20,8 +19,6 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    a { text-decoration: none; }
-
     header {
       text-align: center;
       padding: 80px 20px 40px;
@@ -30,7 +27,7 @@
     header h1 {
       font-size: 2.8em;
       color: #00bfff;
-      text-shadow: 0 0 20px #00bfff;
+      text-shadow: 0 0 25px #00bfff;
       margin: 0;
     }
 
@@ -40,23 +37,38 @@
       font-size: 1.1em;
     }
 
-    /* Social Links */
-    .social-links {
-      margin-top: 25px;
+    /* === SOCIAL BUTTONS === */
+    .social-buttons {
+      margin-top: 30px;
     }
 
-    .social-links a {
+    .social-buttons a {
       display: inline-block;
-      margin: 0 10px;
-      font-size: 1.6em;
-      color: #00bfff;
+      background: linear-gradient(90deg, #0077ff, #00bfff);
+      color: white;
+      padding: 12px 25px;
+      margin: 5px;
+      border-radius: 8px;
+      font-weight: bold;
+      box-shadow: 0 0 15px rgba(0,191,255,0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
       transition: all 0.3s ease;
+      animation: neonPulse 2.5s infinite ease-in-out;
     }
 
-    .social-links a:hover {
-      color: #33ccff;
-      text-shadow: 0 0 15px #00bfff;
-      transform: translateY(-2px);
+    .social-buttons a:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 0 35px rgba(0,191,255,0.9);
+    }
+
+    @keyframes neonPulse {
+      0%, 100% {
+        box-shadow: 0 0 10px rgba(0,191,255,0.5), 0 0 20px rgba(0,191,255,0.4);
+      }
+      50% {
+        box-shadow: 0 0 25px rgba(0,191,255,0.8), 0 0 50px rgba(0,191,255,0.6);
+      }
     }
 
     /* === MAIN SECTION === */
@@ -87,10 +99,6 @@
       margin-top: 0;
     }
 
-    p {
-      line-height: 1.6;
-    }
-
     .btn {
       display: inline-block;
       margin-top: 15px;
@@ -102,11 +110,12 @@
       font-weight: bold;
       letter-spacing: 0.5px;
       transition: all 0.3s ease;
+      animation: neonPulse 3s infinite ease-in-out;
     }
 
     .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 0 30px rgba(0, 191, 255, 0.8);
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 0 40px rgba(0, 191, 255, 0.8);
     }
 
     footer {
@@ -121,21 +130,15 @@
       .card { padding: 20px; }
     }
   </style>
-  <!-- Social Icons -->
-  <script src="https://kit.fontawesome.com/6b2a4f7bfa.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
     <h1>Gurdip Bola</h1>
     <p>Systemutvecklare – Microsoft Azure & C#</p>
-    
-    <div class="social-links">
-      <a href="https://github.com/gurdip6" target="_blank" title="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/gurdip-bola-b82136217/" target="_blank" title="LinkedIn">
-        <i class="fab fa-linkedin"></i>
-      </a>
+
+    <div class="social-buttons">
+      <a href="https://github.com/gurdip6" target="_blank">💻 GitHub</a>
+      <a href="https://www.linkedin.com/in/gurdip-bola-b82136217/" target="_blank">🔗 LinkedIn</a>
     </div>
   </header>
 
