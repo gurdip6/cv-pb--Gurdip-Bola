@@ -2,101 +2,146 @@
 <html lang="sv">
 <head>
   <meta charset="UTF-8">
-  <title>Gurdip Bola – CV & Personligt Brev</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gurdip Bola – Portfolio</title>
   <style>
+    /* === GLOBAL STYLING === */
     body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      background-color: #f5f7fb;
       margin: 0;
-      padding: 0;
-      color: #333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: radial-gradient(circle at top, #0b0e1a, #040509 80%);
+      color: #e6e6e6;
+      overflow-x: hidden;
+      animation: fadeIn 1.2s ease;
     }
 
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    a { text-decoration: none; }
+
     header {
-      background-color: #004aad;
-      color: white;
       text-align: center;
-      padding: 40px 20px;
+      padding: 80px 20px 60px;
     }
 
     header h1 {
+      font-size: 2.8em;
+      color: #00bfff;
+      text-shadow: 0 0 20px #00bfff;
       margin: 0;
-      font-size: 2.4em;
     }
 
     header p {
-      margin: 10px 0 0;
+      color: #9cc9ff;
+      margin: 10px 0;
       font-size: 1.1em;
     }
 
+    /* === MAIN SECTION === */
     main {
-      max-width: 700px;
-      margin: 40px auto;
+      max-width: 800px;
+      margin: auto;
       padding: 20px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 25px;
+      box-shadow: 0 0 25px rgba(0, 191, 255, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 35px rgba(0, 191, 255, 0.25);
     }
 
     h2 {
-      color: #004aad;
+      color: #00bfff;
+      text-shadow: 0 0 8px #00bfff;
       margin-top: 0;
+    }
+
+    p {
+      line-height: 1.6;
     }
 
     .btn {
       display: inline-block;
-      background-color: #004aad;
-      color: white;
-      text-decoration: none;
-      padding: 12px 20px;
-      margin: 10px 5px 0 0;
+      margin-top: 15px;
+      padding: 12px 25px;
       border-radius: 8px;
-      transition: background-color 0.2s ease;
+      color: #fff;
+      background: linear-gradient(90deg, #00bfff, #0077ff);
+      box-shadow: 0 0 20px rgba(0, 191, 255, 0.4);
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
     }
 
     .btn:hover {
-      background-color: #0066ff;
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(0, 191, 255, 0.8);
     }
 
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 30px;
       font-size: 0.9em;
-      color: #666;
+      color: #777;
     }
 
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.8em;
-      }
-      main {
-        margin: 20px;
-      }
+      header h1 { font-size: 2em; }
+      .card { padding: 20px; }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Gurdip Bola</h1>
-    <p>Systemutvecklare under utbildning – Microsoft Azure & C#</p>
-    <p>📍 Stockholm | ✉️ <a href="mailto:gurdip6@live.se" style="color:white;">gurdip6@live.se</a> | 📞 076-201 36 16</p>
+    <p>Systemutvecklare – Microsoft Azure & C#</p>
+    <p>📍 Stockholm | ✉️ <a href="mailto:gurdip6@live.se" style="color:#00bfff;">gurdip6@live.se</a> | 📞 076-201 36 16</p>
   </header>
 
   <main>
-    <h2>Om mig</h2>
-    <p>Jag är en blivande systemutvecklare med fokus på molnbaserad utveckling och Azure. 
-    Jag har erfarenhet av C#, SQL/NoSQL, JavaScript och React, och trivs bäst när jag får kombinera 
-    teknik med problemlösning och lagarbete.</p>
+    <div class="card">
+      <h2>👨‍💻 Om mig</h2>
+      <p>Jag är en blivande systemutvecklare med fokus på molnteknik, Microsoft Azure och moderna utvecklingsverktyg som C#, JavaScript och React.
+      Jag trivs i team som värdesätter innovation, struktur och kreativ problemlösning.</p>
+    </div>
 
-    <h2>Dokument</h2>
-    <p>Ladda ner mina dokument här:</p>
-    <a class="btn" href="GurdipBolaCV1.docx" download>📄 Ladda ner CV</a>
-    <a class="btn" href="Personligt%20Brev-Gurdip1.docx" download>💌 Ladda ner Personligt Brev</a>
+    <div class="card">
+      <h2>📂 Dokument</h2>
+      <p>Här kan du ladda ner mina dokument:</p>
+      <a class="btn" href="GurdipBolaCV1.docx" download>📄 Ladda ner CV</a>
+      <a class="btn" href="Personligt%20Brev-Gurdip1.docx" download>💌 Ladda ner Personligt Brev</a>
+    </div>
+
+    <div class="card">
+      <h2>🚀 Kompetenser</h2>
+      <p>• C#, .NET, SQL/NoSQL, JavaScript, React<br>
+         • Microsoft Azure, Docker, Terraform, GitHub Actions<br>
+         • Agile Development, Jira, DevOps-pipelines<br>
+         • Linux/Unix, serverlös arkitektur</p>
+    </div>
+
+    <div class="card">
+      <h2>📘 Utbildning</h2>
+      <p><strong>Systemutvecklare (Azure-inriktning)</strong> – Jensen Yrkeshögskola, Stockholm (2024– )<br>
+         <strong>VVS-ingenjör</strong> – Tekniska Högskolan, Linköping (2022–2024)<br>
+         <strong>Datasystemvetenskap</strong> – Stockholms Universitet (2010)</p>
+    </div>
   </main>
 
   <footer>
-    <p>© 2025 Gurdip Bola</p>
+    <p>© 2025 Gurdip Bola | Skapad med ❤️ och kod</p>
   </footer>
 </body>
 </html>
