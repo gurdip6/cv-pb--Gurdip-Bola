@@ -15,7 +15,7 @@
     body {
       font-family: 'Fira Code', monospace;
       color: #e6f0ff;
-      background-color: #0b1221;
+      background-color: #10182b;
       overflow-x: hidden;
       position: relative;
       min-height: 100vh;
@@ -23,20 +23,20 @@
       flex-direction: column;
     }
 
-    /* === Kodbakgrund (animerad text) === */
+    /* === Kodbakgrund (ljusare & tonad) === */
     .code-bg {
       position: fixed;
       inset: 0;
-      background: radial-gradient(circle at center, #0b1221 0%, #0b0f1a 100%);
+      background: linear-gradient(180deg, #10182b 0%, #0c1224 100%);
       z-index: 0;
       overflow: hidden;
-      color: rgba(0, 255, 200, 0.08);
+      color: rgba(0, 255, 200, 0.05);
       font-size: 13px;
       line-height: 1.6;
       white-space: pre;
       user-select: none;
       pointer-events: none;
-      animation: scrollCode 60s linear infinite;
+      animation: scrollCode 80s linear infinite;
     }
 
     @keyframes scrollCode {
@@ -44,7 +44,23 @@
       100% {transform: translateY(-50%);}
     }
 
-    /* === Innehåll === */
+    /* === Blinkande markör === */
+    .cursor {
+      display: inline-block;
+      background-color: #00ffff;
+      width: 10px;
+      height: 1.4rem;
+      margin-left: 5px;
+      vertical-align: bottom;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50% {opacity: 1;}
+      50.1%, 100% {opacity: 0;}
+    }
+
+    /* === Layout och innehåll === */
     .content-wrapper {
       flex: 1;
       display: flex;
@@ -64,7 +80,7 @@
       margin: 80px auto;
       padding: 40px;
       border-radius: 20px;
-      background-color: rgba(15, 20, 35, 0.8);
+      background-color: rgba(18, 25, 44, 0.85);
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
       backdrop-filter: blur(8px);
     }
@@ -77,14 +93,14 @@
 
     .text h1 {
       font-size: 2.4rem;
-      color: #7ddfff;
+      color: #80e4ff;
       margin-bottom: 15px;
     }
 
     .text p {
-      color: #b9d3ff;
+      color: #bedbff;
       line-height: 1.6;
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       margin-bottom: 25px;
     }
 
@@ -171,7 +187,7 @@
       position: relative;
       z-index: 1;
       max-width: 1100px;
-      margin: 40px auto 60px;
+      margin: 40px auto 120px;
       padding: 0 20px;
     }
 
@@ -216,7 +232,7 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      background: rgba(15, 20, 35, 0.9);
+      background: rgba(18, 25, 44, 0.9);
       text-align: center;
       color: #7ddfff;
       padding: 15px 10px;
@@ -225,16 +241,27 @@
       box-shadow: 0 -3px 10px rgba(0,0,0,0.3);
     }
 
+    /* === Mobiloptimering === */
     @media (max-width: 900px) {
       .container {
         flex-direction: column-reverse;
         text-align: center;
-        padding: 30px;
+        padding: 25px;
+        margin: 60px auto;
       }
 
       .text { padding: 0; }
-      .image img { width: 240px; height: 240px; margin-bottom: 25px; }
+      .text h1 { font-size: 2rem; }
+      .text p { font-size: 0.95rem; }
+
+      .image img {
+        width: 220px;
+        height: 220px;
+        margin-bottom: 20px;
+      }
+
       .buttons { justify-content: center; }
+      .projects { margin-bottom: 100px; }
     }
   </style>
 </head>
@@ -250,10 +277,10 @@
     &lt;p&gt;console.log("Hello World!")&lt;/p&gt;
     &lt;section class="skills"&gt;
       &lt;ul&gt;
-        &lt;li&gt;C# / .NET&lt;/li&gt;
-        &lt;li&gt;JavaScript / React&lt;/li&gt;
-        &lt;li&gt;Azure / SQL&lt;/li&gt;
-        &lt;li&gt;Docker / Terraform&lt;/li&gt;
+        &lt;li&gt;C# / .NET / JavaScript / TypeScript&lt;/li&gt;
+        &lt;li&gt;React / SQL / NoSQL&lt;/li&gt;
+        &lt;li&gt;Azure / Docker / Terraform&lt;/li&gt;
+        &lt;li&gt;GitHub Actions / Linux / REST API&lt;/li&gt;
       &lt;/ul&gt;
     &lt;/section&gt;
   &lt;/body&gt;
@@ -264,7 +291,7 @@
     <!-- Hero -->
     <div class="container">
       <div class="text">
-        <h1>Hej,<br>Jag heter Gurdip Bola.</h1>
+        <h1>Hej,<br>Jag heter Gurdip Bola<span class="cursor"></span></h1>
         <p>
           Jag är en blivande systemutvecklare med inriktning på Microsoft Azure och C#.<br>
           Jag älskar att skapa smarta, säkra och snygga lösningar i molnet.
@@ -282,8 +309,6 @@
       <div class="image">
         <img src="Gurdip.jpg.jpg" alt="Foto på Gurdip Bola">
       </div>
-    </div>
-
     
   <footer>© 2025 Gurdip Bola | Byggd med passion och kod 💻</footer>
 </body>
