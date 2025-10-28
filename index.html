@@ -24,20 +24,21 @@
       flex-direction: column;
     }
 
-    /* === Kodbakgrund (ljusare & tonad) === */
+    /* === Kodbakgrund (större & centrerad) === */
     .code-bg {
       position: fixed;
       inset: 0;
       background: linear-gradient(180deg, #10182b 0%, #0c1224 100%);
       z-index: 0;
       overflow: hidden;
-      color: rgba(0, 255, 200, 0.05);
-      font-size: 13px;
-      line-height: 1.6;
-      white-space: pre;
+      color: rgba(0, 255, 200, 0.06);
+      font-size: 16px;
+      line-height: 1.7;
+      text-align: center;
       user-select: none;
       pointer-events: none;
-      animation: scrollCode 80s linear infinite;
+      animation: scrollCode 90s linear infinite;
+      white-space: pre-wrap;
     }
 
     @keyframes scrollCode {
@@ -102,7 +103,15 @@
       color: #bedbff;
       line-height: 1.6;
       font-size: 1.05rem;
+      margin-bottom: 20px;
+    }
+
+    .lia-text {
+      color: #9fd6ff;
+      font-size: 1rem;
+      line-height: 1.6;
       margin-bottom: 25px;
+      font-style: italic;
     }
 
     .buttons {
@@ -128,20 +137,29 @@
       box-shadow: 0 6px 15px rgba(0, 255, 255, 0.5);
     }
 
+    /* === Sociala ikoner === */
     .socials {
       display: flex;
-      gap: 15px;
-      margin-top: 20px;
+      gap: 20px;
+      margin-top: 25px;
+      align-items: center;
     }
 
-    .socials a {
-      color: #00bfff;
-      font-size: 1.5rem;
-      text-decoration: none;
-      transition: color 0.3s ease;
+    .socials img {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background-color: rgba(0, 119, 255, 0.15);
+      padding: 8px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.15);
     }
 
-    .socials a:hover { color: #00ffff; }
+    .socials img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+      background-color: rgba(0, 191, 255, 0.25);
+    }
 
     .image {
       flex: 1;
@@ -194,7 +212,7 @@
       padding: 15px 10px;
       font-size: 0.95rem;
       z-index: 5;
-      box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 -3px 10px rgba(0,0,0,0.3);
     }
 
     /* === Mobiloptimering === */
@@ -250,13 +268,21 @@
           Jag är en blivande systemutvecklare med inriktning på Microsoft Azure och C#.<br />
           Jag gillar att skapa smarta och säkra lösningar i molnet.
         </p>
+        <p class="lia-text">
+          Jag söker en LIA-plats inom systemutveckling med fokus på .NET och Azure, där jag kan utvecklas praktiskt och bidra med min kunskap och mitt driv.
+        </p>
         <div class="buttons">
           <a href="GurdipBolaCV1.docx" class="btn" download>📄 Ladda ner CV</a>
-          <a href="Personligt%20Brev-Gurdip1.docx" class="btn" download>💌 Personligt Brev</a>
         </div>
+
+        <!-- Sociala ikoner -->
         <div class="socials">
-          <a href="https://github.com/gurdip6" target="_blank" title="GitHub">💻</a>
-          <a href="https://www.linkedin.com/in/gurdip-bola-b82136217/" target="_blank" title="LinkedIn">🔗</a>
+          <a href="https://github.com/gurdip6" target="_blank">
+            <img src="github.png" alt="GitHub">
+          </a>
+          <a href="https://www.linkedin.com/in/gurdip-bola-b82136217/" target="_blank">
+            <img src="linkedin.webp" alt="LinkedIn">
+          </a>
         </div>
       </div>
 
