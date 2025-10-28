@@ -5,42 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gurdip Bola – Portfolio</title>
 
-  <!-- Fira Code (kodinspirerad font) -->
+  <!-- Importera Fira Code -->
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap');
   </style>
 
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
+    * {box-sizing: border-box; margin:0; padding:0;}
     body {
       font-family: 'Fira Code', monospace;
-      color: #1c1c1c;
-      background: linear-gradient(135deg, #e9f2ff 0%, #dce7f8 100%);
+      color: #e6f0ff;
+      background-color: #0b1221;
       overflow-x: hidden;
+      position: relative;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
 
-    /* === Kodbakgrund (statisk, ljus IDE-stil) === */
+    /* === Kodbakgrund (animerad text) === */
     .code-bg {
       position: fixed;
       inset: 0;
-      color: rgba(0, 0, 0, 0.08);
+      background: radial-gradient(circle at center, #0b1221 0%, #0b0f1a 100%);
+      z-index: 0;
+      overflow: hidden;
+      color: rgba(0, 255, 200, 0.08);
       font-size: 13px;
       line-height: 1.6;
       white-space: pre;
       user-select: none;
       pointer-events: none;
-      overflow: hidden;
-      padding: 80px 50px;
-      font-family: 'Fira Code', monospace;
-      background: linear-gradient(135deg, #f6f9ff 0%, #e5f0ff 100%);
-      z-index: 0;
+      animation: scrollCode 60s linear infinite;
+    }
+
+    @keyframes scrollCode {
+      0% {transform: translateY(0);}
+      100% {transform: translateY(-50%);}
     }
 
     /* === Innehåll === */
+    .content-wrapper {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
     .container {
       position: relative;
       z-index: 1;
@@ -50,12 +61,12 @@
       flex-wrap: wrap;
       width: 90%;
       max-width: 1100px;
-      margin: 100px auto 50px;
+      margin: 80px auto;
       padding: 40px;
       border-radius: 20px;
-      background-color: rgba(255,255,255,0.85);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-      backdrop-filter: blur(6px);
+      background-color: rgba(15, 20, 35, 0.8);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(8px);
     }
 
     .text {
@@ -66,14 +77,14 @@
 
     .text h1 {
       font-size: 2.4rem;
-      color: #004aad;
+      color: #7ddfff;
       margin-bottom: 15px;
     }
 
     .text p {
-      color: #2d3852;
-      line-height: 1.7;
-      font-size: 1.05rem;
+      color: #b9d3ff;
+      line-height: 1.6;
+      font-size: 1.1rem;
       margin-bottom: 25px;
     }
 
@@ -85,19 +96,19 @@
     }
 
     .btn {
-      background: linear-gradient(90deg, #0077ff, #00bfff);
+      background: linear-gradient(90deg, #00bfff, #0077ff);
       color: #fff;
       padding: 12px 20px;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0, 119, 255, 0.3);
+      box-shadow: 0 4px 10px rgba(0, 119, 255, 0.4);
     }
 
     .btn:hover {
-      background: linear-gradient(90deg, #00bfff, #00ffff);
-      box-shadow: 0 6px 15px rgba(0, 255, 255, 0.4);
+      background: linear-gradient(90deg, #00ffff, #00bfff);
+      box-shadow: 0 6px 15px rgba(0, 255, 255, 0.5);
     }
 
     .socials {
@@ -107,13 +118,13 @@
     }
 
     .socials a {
-      color: #004aad;
+      color: #00bfff;
       font-size: 1.5rem;
       text-decoration: none;
       transition: color 0.3s ease;
     }
 
-    .socials a:hover { color: #00bfff; }
+    .socials a:hover { color: #00ffff; }
 
     .image {
       flex: 1;
@@ -124,13 +135,29 @@
       min-width: 280px;
     }
 
+    .image::before {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(0, 191, 255, 0.25), rgba(0, 119, 255, 0.15));
+      animation: glow 5s ease-in-out infinite alternate;
+      z-index: 0;
+    }
+
+    @keyframes glow {
+      from {transform: scale(1); opacity: 0.8;}
+      to {transform: scale(1.1); opacity: 1;}
+    }
+
     .image img {
       width: 320px;
       height: 320px;
       object-fit: cover;
       border-radius: 50%;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-      border: 5px solid #ffffff;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      border: 4px solid #0b1221;
       position: relative;
       z-index: 1;
       opacity: 0;
@@ -150,7 +177,7 @@
 
     .projects h2 {
       font-size: 2rem;
-      color: #004aad;
+      color: #7ddfff;
       text-align: center;
       margin-bottom: 30px;
     }
@@ -162,40 +189,40 @@
     }
 
     .card {
-      background-color: rgba(255,255,255,0.9);
+      background-color: rgba(255, 255, 255, 0.08);
       border-radius: 15px;
       padding: 25px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
       transition: transform 0.25s ease, box-shadow 0.25s ease;
       text-decoration: none;
-      color: #0b1b45;
+      color: #c6e2ff;
     }
 
     .card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 12px 25px rgba(0,119,255,0.2);
+      box-shadow: 0 12px 25px rgba(0, 255, 255, 0.3);
     }
 
     .card h3 {
       margin-bottom: 10px;
       font-size: 1.3rem;
-      color: #0077ff;
+      color: #00bfff;
     }
 
-    .card p {
-      color: #3f4967;
-      line-height: 1.5;
-    }
+    .card p { color: #a9c9ff; }
 
     footer {
-      margin-top: auto;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(15, 20, 35, 0.9);
       text-align: center;
-      color: #334b75;
-      padding: 20px;
-      background: rgba(255,255,255,0.8);
-      box-shadow: 0 -4px 10px rgba(0,0,0,0.05);
-      z-index: 10;
-      position: relative;
+      color: #7ddfff;
+      padding: 15px 10px;
+      font-size: 0.95rem;
+      z-index: 5;
+      box-shadow: 0 -3px 10px rgba(0,0,0,0.3);
     }
 
     @media (max-width: 900px) {
@@ -212,52 +239,52 @@
   </style>
 </head>
 <body>
-
-  <!-- Ljus kodinspirerad bakgrund -->
+  <!-- Kodbakgrund -->
   <div class="code-bg">
-function deployAzureApp() {
-  const app = "Gurdip Bola Portfolio";
-  const language = ["C#", "JavaScript"];
-  const platform = "Microsoft Azure";
-  console.log(`Deploying ${app} with ${language} on ${platform}`);
-}
-
-const skills = {
-  frontend: ["React", "HTML", "CSS"],
-  backend: ["C#", ".NET", "SQL"],
-  devops: ["Docker", "Terraform", "GitHub Actions"]
-};
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Gurdip Bola – Portfolio&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Systemutvecklare (Azure &amp; C#)&lt;/h1&gt;
+    &lt;p&gt;console.log("Hello World!")&lt;/p&gt;
+    &lt;section class="skills"&gt;
+      &lt;ul&gt;
+        &lt;li&gt;C# / .NET&lt;/li&gt;
+        &lt;li&gt;JavaScript / React&lt;/li&gt;
+        &lt;li&gt;Azure / SQL&lt;/li&gt;
+        &lt;li&gt;Docker / Terraform&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/section&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
   </div>
 
-  <!-- Hero -->
-  <div class="container">
-    <div class="text">
-      <h1>Hej,<br>Jag heter Gurdip Bola.</h1>
-      <p>
-        Jag är en blivande systemutvecklare med inriktning på Microsoft Azure och C#. 
-        Med ett brinnande intresse för teknik älskar jag att kombinera kreativitet med logiskt tänkande 
-        för att lösa problem och skapa lösningar som verkligen gör skillnad. 
-        Jag drivs av att bygga moderna, säkra och effektiva applikationer i molnet, 
-        där varje detalj spelar roll. 
-        Genom mitt engagemang för utveckling, både tekniskt och personligt, 
-        strävar jag efter att alltid bli lite bättre än igår.
-      </p>
-      <div class="buttons">
-        <a href="GurdipBolaCV1.docx" class="btn" download>📄 Ladda ner CV</a>
-        <a href="Personligt%20Brev-Gurdip1.docx" class="btn" download>💌 Personligt Brev</a>
+  <div class="content-wrapper">
+    <!-- Hero -->
+    <div class="container">
+      <div class="text">
+        <h1>Hej,<br>Jag heter Gurdip Bola.</h1>
+        <p>
+          Jag är en blivande systemutvecklare med inriktning på Microsoft Azure och C#.<br>
+          Jag älskar att skapa smarta, säkra och snygga lösningar i molnet.
+        </p>
+        <div class="buttons">
+          <a href="GurdipBolaCV1.docx" class="btn" download>📄 Ladda ner CV</a>
+          <a href="Personligt%20Brev-Gurdip1.docx" class="btn" download>💌 Personligt Brev</a>
+        </div>
+        <div class="socials">
+          <a href="https://github.com/gurdip6" target="_blank" title="GitHub">💻</a>
+          <a href="https://www.linkedin.com/in/gurdip-bola-b82136217/" target="_blank" title="LinkedIn">🔗</a>
+        </div>
       </div>
-      <div class="socials">
-        <a href="https://github.com/gurdip6" target="_blank" title="GitHub">💻</a>
-        <a href="https://www.linkedin.com/in/gurdip-bola-b82136217/" target="_blank" title="LinkedIn">🔗</a>
+
+      <div class="image">
+        <img src="Gurdip.jpg.jpg" alt="Foto på Gurdip Bola">
       </div>
     </div>
 
-    <div class="image">
-      <img src="Gurdip.jpg.jpg" alt="Foto på Gurdip Bola">
-    </div>
-  </div>
-
-  
+    
   <footer>© 2025 Gurdip Bola | Byggd med passion och kod 💻</footer>
 </body>
 </html>
